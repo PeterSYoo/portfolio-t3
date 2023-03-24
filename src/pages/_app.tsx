@@ -20,7 +20,6 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="min-w-screen flex min-h-screen flex-col bg-[#EFEEED]">
-        <Header />
         <div className="mt-[110px] flex flex-grow">
           <Component {...pageProps} />
         </div>
