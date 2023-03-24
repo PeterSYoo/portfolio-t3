@@ -17,12 +17,15 @@ export const Header = () => {
   // JSX --------------------------------------
   return (
     <>
-      <section className="fixed h-[110px] w-full bg-[#EFEEED]">
+      <section className="fixed top-0 h-[110px] w-full bg-[#EFEEED]">
         <div className="mx-auto flex h-full max-w-[1440px] items-center px-10">
-          <div className="logo-bg z-0 -mr-[100px] h-[70px] w-[100px] rounded-lg"></div>
-          <div className="logo-bg-2 -z-10 -mr-[99px] h-[69px] w-[100px] rounded-lg"></div>
-          <div className="logo-bg-2 -z-10 -mr-[98px] h-[69px] w-[100px] rounded-lg"></div>
-          <div className="logo-bg-2 -z-10 -mr-[97px] h-[69px] w-[100px] rounded-lg"></div>
+          <div className="logo-bg z-0 -mr-[102px] h-[70px] w-[100px] rounded-lg bg-gradient-to-tr from-[#ff3e5e] to-[#ff683e]"></div>
+          <div className="logo-bg-2 -z-10 -mr-[101px] h-[65px] w-[100px] rounded-lg"></div>
+          <div className="logo-bg-2 -z-10 -mr-[94px] h-[65px] w-[100px] rounded-lg"></div>
+          <div className="logo-bg-2 -z-10 -mr-[99px] h-[68px] w-[100px] rounded-lg"></div>
+          <div className="logo-bg-2 -z-10 -mr-[98px] h-[67px] w-[100px] rounded-lg"></div>
+          <div className="logo-bg-2 -z-10 -mr-[97px] h-[66px] w-[100px] rounded-lg"></div>
+          <div className="logo-bg-2 -z-10 -mr-[96px] h-[65px] w-[100px] rounded-lg"></div>
           {/* Logo ----------------- */}
           <button className="logo z-10 rounded-lg py-3 text-3xl font-bold text-white transition-all">
             PY
@@ -42,8 +45,10 @@ export const Header = () => {
                   ? "left-[226px] w-[73px]"
                   : activeMenu === "resume"
                   ? "left-[350px] w-[87px]"
+                  : activeMenu === ""
+                  ? "left-0 w-0"
                   : "opacity-100"
-              } relative top-0 -z-10 h-8 rounded bg-[#ff3e5e] transition-all duration-500 ease-in-out`}
+              } relative top-0 -z-10 h-8 rounded bg-gradient-to-tr from-[#ff3e5e] to-[#ff683e] transition-all duration-500 ease-in-out`}
             />
             <button
               className={`${
