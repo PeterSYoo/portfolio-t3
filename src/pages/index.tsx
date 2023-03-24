@@ -1,11 +1,13 @@
 import { type NextPage } from "next";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
+import { Header } from "~/components/root/Header.components";
 
 const Home: NextPage = () => {
   // JSX --------------------------------------
   return (
     <>
+      <Header />
       <main className="flex w-full">
         <div className="-mt-[110px] flex h-screen w-screen justify-center">
           <div className="flex w-full max-w-[1005px] flex-col gap-[30px] px-5 md:gap-[40px]">
