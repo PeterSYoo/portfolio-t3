@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Logo ---------------------------------------- */
+.logo {
+  position: relative;
+  top: 0px;
+  left: 45px;
+  transform: translate(50%, -50%);
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 700;
+  text-shadow: -5px 0px 0px #ffbac6,
+    -8px -1px 0px #fda3b2,
+    -10px -2px 0px #FF7087;
+  transform: perspective(200px) rotateY(45deg);
+  letter-spacing: -15px;
+}
+
+.logo:hover {
+  text-shadow: none;
+  top: -2px;
+  left: 35px;
+}
+
+.logo-bg {
+  position: relative;
+  top: -2px;
+  left: 0px;
+  background-color: #ff3e5e;
+  transform: perspective(200px) rotateY(45deg);
+}
+
+.logo-bg-2 {
+  position: relative;
+  top: -2px;
+  left: 0px;
+  background-color: #cf314b;
+  transform: perspective(200px) rotateY(45deg);
+}
+
+/* Email icon ----------------------------------- */
+.email-logo {
+  position: relative;
+  top: 0px;
+  right: 0px;
+  transform: translate(50%, -50%);
+  text-transform: uppercase;
+  transform: perspective(100px) rotateY(-45deg);
+}
+
+.email-logo:hover {
+  text-shadow: none;
+  top: 0px;
+  right: 0px;
+  transform: perspective(100px) rotateY(0deg);
+}
+
+
+.email-logo-bg {
+  position: relative;
+  top: -2px;
+  left: 0px;
+  background-color: #ff3e5e;
+  transform: perspective(100px) rotateY(-45deg);
+}
