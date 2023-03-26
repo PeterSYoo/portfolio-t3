@@ -19,17 +19,31 @@ export const LandingSection = ({
         <div className="flex w-full max-w-[1005px] flex-col gap-[30px] px-5 md:gap-[40px]">
           {/* Name ---------------- */}
           <div className="mt-[200px]">
+            <p className="pl-1 text-[20px]">Hi 👋, my name is</p>
             <h1 className="text-[64px] font-semibold leading-[80px] tracking-tight">
               Peter Yoo
             </h1>
             <div className="flex items-center gap-5">
               <p className="pl-1 text-[20px]">
-                Full Stack
-                Developer&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;Artist&nbsp;&nbsp;&nbsp;·
+                Full Stack Developer&nbsp;&nbsp;·&nbsp;&nbsp;Artist&nbsp;&nbsp;·
               </p>
-              <BsLinkedin className="text-xl text-[#0077B7]" />
-              <BsGithub className="text-xl" />
-              <AiOutlineMail className="text-2xl text-[#ff3e5e]" />
+              <a href="https://www.linkedin.com/in/petersyoo/" target="_blank">
+                <BsLinkedin className="text-xl text-[#0077B7]" />
+              </a>
+              <a href="https://github.com/PeterSYoo" target="_blank">
+                <BsGithub className="text-xl" />
+              </a>
+              <a href="mailto: petersyoox@gmail.com" target="_blank">
+                <AiOutlineMail className="text-2xl text-[#ff3e5e]" />
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1FtQO7NeQUfQWxV0m9Cp7zW6TGIbHq5Y2/view"
+                target="_blank"
+              >
+                <button className="rounded border border-black px-1 py-0.5 text-xs">
+                  RESUME
+                </button>
+              </a>
             </div>
           </div>
           {/* Animated Text ---------------- */}
