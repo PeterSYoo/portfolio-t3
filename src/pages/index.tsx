@@ -63,8 +63,6 @@ const Home: NextPage = () => {
     isButtonScrollingRef.current = false;
   }, [scrollActiveMenu]);
 
-  console.log({ scrollActiveMenu });
-
   // JSX ---------------------------------------------------
   return (
     <>
