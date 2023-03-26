@@ -2,7 +2,7 @@ import { type IWork } from "additional";
 import Image from "next/image";
 import { useContext, useEffect } from "react";
 import { BsGithub } from "react-icons/bs";
-import { TiArrowSortedDown } from "react-icons/ti";
+import { BiChevronsDown } from "react-icons/bi";
 import { IsWorkContext } from "~/contexts/IsWorkContext";
 
 export const Work = ({ work }: { work: IWork | null }) => {
@@ -45,12 +45,12 @@ export const Work = ({ work }: { work: IWork | null }) => {
       >
         <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center px-10">
           {/* Close Component ------------------------- */}
-          <button onClick={() => setIsWork(false)} className="">
-            <TiArrowSortedDown className="text-2xl" />
+          <button onClick={() => setIsWork(false)} className="mt-2 opacity-50">
+            <BiChevronsDown className="text-2xl" />
           </button>
           <div className="flex w-full flex-col gap-1">
             {/* Name & Date --------------------------- */}
-            <div className="flex w-full items-end justify-between pt-5">
+            <div className="flex w-full items-end justify-between pt-10">
               <h1 className="text-3xl font-bold">{work?.name}</h1>
               <div className="flex flex-col items-end">
                 <p className="text-sm">{work?.type}</p>
