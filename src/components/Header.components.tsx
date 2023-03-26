@@ -3,8 +3,10 @@ import {
   useCallback,
   useLayoutEffect,
   useState,
+  useContext,
 } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { IsWorkContext } from "~/contexts/IsWorkContext";
 
 export const Header = ({
   scrollActiveMenu,
@@ -17,9 +19,10 @@ export const Header = ({
   const [activeMenu, setActiveMenu] = useState<string>("landing");
   const [skipScrollActiveMenuUpdate, setSkipScrollActiveMenuUpdate] =
     useState<boolean>(false);
+  const { isWork, setIsWork } = useContext(IsWorkContext);
 
   // Declarations ---------------------------
-  const activeMenuClasses = "text-white transition-all duration-500";
+  const activeMenuClasses = "text-white transition-all duration-1000";
 
   // Custom Functions --------------------------------
   const scrollToSection = (sectionId: string) => {
@@ -28,13 +31,20 @@ export const Header = ({
   };
 
   const handleMenuClick = useCallback((menu: string) => {
-    isButtonScrollingRef.current = true;
-    console.log({ isButtonScrollingRef: isButtonScrollingRef.current });
-    setSkipScrollActiveMenuUpdate(true);
-    setActiveMenu(menu);
-    scrollToSection(menu);
-    isButtonScrollingRef.current = false;
-    console.log({ isButtonScrollingRef: isButtonScrollingRef.current });
+    setIsWork(false);
+    if (menu === "resume") {
+      window.open(
+        "https://drive.google.com/file/d/1FtQO7NeQUfQWxV0m9Cp7zW6TGIbHq5Y2/view?usp=sharing",
+        "_blank"
+      );
+      setActiveMenu(menu);
+    } else {
+      isButtonScrollingRef.current = true;
+      setSkipScrollActiveMenuUpdate(true);
+      setActiveMenu(menu);
+      scrollToSection(menu);
+      isButtonScrollingRef.current = false;
+    }
   }, []);
 
   // Effects ---------------------------
@@ -49,7 +59,7 @@ export const Header = ({
   // JSX --------------------------------------
   return (
     <>
-      <section className="fixed top-0 z-20 h-[110px] w-full bg-[#EFEEED]">
+      <section className="fixed top-0 z-30 h-[110px] w-full bg-[#EFEEED]">
         <div className="mx-auto flex h-full max-w-[1440px] items-center px-10">
           <div
             onClick={() => handleMenuClick("landing")}
@@ -115,20 +125,17 @@ export const Header = ({
             >
               PLAY
             </button>
-            <a
-              href="https://drive.google.com/file/d/1BJeWfOQVJa1BAXJDbg1w2T0x9DTJfiHb/view?usp=sharing"
-              target="_blank"
+            <button
+              className={`${
+                (activeMenu === "resume" && activeMenuClasses) || ""
+              }`}
+              onClick={() => handleMenuClick("resume")}
             >
-              <button
-                className={`${
-                  (activeMenu === "resume" && activeMenuClasses) || ""
-                }`}
-                onClick={() => handleMenuClick("resume")}
-              >
-                RESUME
-              </button>
+              RESUME
+            </button>
+            <a href="mailto:petersyoox@gmail.com" target="_blank">
+              <button className="email-logo z-10 transition-all">EMAIL</button>
             </a>
-            <button className="email-logo z-10 transition-all">EMAIL</button>
           </div>
         </div>
       </section>
