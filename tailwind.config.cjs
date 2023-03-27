@@ -5,6 +5,7 @@ const config = {
     extend: {},
     fontFamily: {
       serif: ["Times New Romans"],
+      inter: ["var(--font-inter)"],
     },
   },
   plugins: [],
