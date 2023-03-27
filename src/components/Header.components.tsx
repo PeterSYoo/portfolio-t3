@@ -19,7 +19,7 @@ export const Header = ({
   const [activeMenu, setActiveMenu] = useState<string>("landing");
   const [skipScrollActiveMenuUpdate, setSkipScrollActiveMenuUpdate] =
     useState<boolean>(false);
-  const { isWork, setIsWork } = useContext(IsWorkContext);
+  const { setIsWork } = useContext(IsWorkContext);
 
   // Declarations ---------------------------
   const activeMenuClasses = "text-white transition-all duration-1000";
@@ -37,6 +37,9 @@ export const Header = ({
         "https://drive.google.com/file/d/1FtQO7NeQUfQWxV0m9Cp7zW6TGIbHq5Y2/view?usp=sharing",
         "_blank"
       );
+      setActiveMenu(menu);
+    } else if (menu === "email") {
+      window.open("mailto:petersyoox@gmail.com", "_blank");
       setActiveMenu(menu);
     } else {
       isButtonScrollingRef.current = true;
@@ -59,11 +62,14 @@ export const Header = ({
   // JSX --------------------------------------
   return (
     <>
-      <section className="fixed top-0 z-30 h-[110px] w-full bg-[#EFEEED]">
+      <section
+        id="header"
+        className="fixed top-0 z-30 h-[110px] w-full bg-[#EFEEED] bg-opacity-90 pr-5"
+      >
         <div className="mx-auto flex h-full max-w-[1440px] items-center px-10">
           <div
             onClick={() => handleMenuClick("landing")}
-            className="logo-bg z-0 -mr-[102px] h-[70px] w-[100px] cursor-pointer rounded-lg bg-gradient-to-tr from-[#eadcd4] to-[#BEB8B4]"
+            className="logo-bg z-0 -mr-[102px] h-[70px] w-[100px] cursor-pointer rounded-lg bg-gradient-to-tr from-[#c4c4c4] to-[#7e8083]"
           ></div>
           <div className="logo-bg-2 -z-10 -mr-[101px] h-[65px] w-[100px] rounded-lg"></div>
           <div className="logo-bg-2 -z-10 -mr-[94px] h-[65px] w-[100px] rounded-lg"></div>
@@ -96,10 +102,12 @@ export const Header = ({
                   ? "left-[326px] w-[63px]"
                   : activeMenu === "resume"
                   ? "left-[447px] w-[87px]"
+                  : activeMenu === "email"
+                  ? "left-[558px] w-[75px]"
                   : activeMenu === "landing"
                   ? "left-0 w-0"
                   : "opacity-100"
-              } relative top-0 -z-10 h-8 rounded bg-gradient-to-tr from-[#d8cbc4] to-[#BEB8B4] shadow-[0_5px_10px_0px] shadow-[#BEB8B4] transition-all duration-500 ease-in-out`}
+              } relative top-0 -z-10 h-8 rounded bg-gradient-to-tr from-[#c4c4c4] to-[#7e8083] shadow shadow-[#7e8083] transition-all duration-500 ease-in-out`}
             />
             <button
               className={`${
@@ -133,9 +141,14 @@ export const Header = ({
             >
               RESUME
             </button>
-            <a href="mailto:petersyoox@gmail.com" target="_blank">
-              <button className="email-logo z-10 transition-all">EMAIL</button>
-            </a>
+            <button
+              className={`${
+                (activeMenu === "email" && activeMenuClasses) || ""
+              }`}
+              onClick={() => handleMenuClick("email")}
+            >
+              EMAIL
+            </button>
           </div>
         </div>
       </section>
