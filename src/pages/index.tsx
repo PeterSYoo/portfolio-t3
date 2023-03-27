@@ -79,16 +79,16 @@ const Home: NextPage = () => {
         <section
           ref={sectionRefs.about}
           id="about"
-          className="h-screen bg-red-200"
+          className="h-screen bg-red-100"
         ></section>
         {/* Play Section ------------------------------ */}
         <section
           ref={sectionRefs.play}
           id="play"
-          className="h-screen bg-yellow-200"
+          className="h-screen bg-yellow-100"
         ></section>
         {/* Footer Section ---------------------------- */}
-        <section id="footer" className="h-[400px] bg-purple-300"></section>
+        <section id="footer" className="h-[400px] bg-purple-100"></section>
       </main>
     </>
   );
