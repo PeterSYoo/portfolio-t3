@@ -8,6 +8,11 @@ export interface IWork {
   github: string;
   technologies: string[];
   description: string;
+  contributors: {
+    name: string;
+    role: string;
+    linkedin: string;
+  }[];
   images: string[];
   youtube: string;
 }
