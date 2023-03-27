@@ -1,8 +1,15 @@
 import { type IWork } from "additional";
 import Image from "next/image";
 import { useContext, useEffect } from "react";
-import { BsGithub } from "react-icons/bs";
+import {
+  BsGithub,
+  BsInfoCircle,
+  BsLink45Deg,
+  BsLinkedin,
+} from "react-icons/bs";
 import { BiChevronsDown } from "react-icons/bi";
+import { IoPeopleSharp } from "react-icons/io5";
+import { FaTools } from "react-icons/fa";
 import { IsWorkContext } from "~/contexts/IsWorkContext";
 
 export const Work = ({ work }: { work: IWork | null }) => {
@@ -12,8 +19,8 @@ export const Work = ({ work }: { work: IWork | null }) => {
   // Declaractions ----------------------------------------
   const prepmealStyle = "bg-gradient-to-br from-[#FFF1E8] to-[#BEB8B4]";
   const talkthruStyle = "bg-gradient-to-br from-[#9C9BA5] to-[#EBEBEE]";
-  const nudoodleStyle = "bg-gradient-to-b from-[#B0B3C3] to-[#C1C2C7]";
-  const tickersaverStyle = "bg-gradient-to-tr from-[#F8EBE9] to-[#B8A5A2]";
+  const nudoodleStyle = "bg-gradient-to-b from-[#FFAECB] to-[#FFBB90]";
+  const tickersaverStyle = "bg-gradient-to-tr from-[#F3F3F3] to-[#989A9E]";
 
   // Effect -----------------------------------------------
   useEffect(() => {
@@ -41,7 +48,7 @@ export const Work = ({ work }: { work: IWork | null }) => {
           (work?.name === "TickerSaver" && tickersaverStyle) ||
           ""
         }
-        z-30 mt-[110px] h-screen w-screen overflow-y-scroll pb-[200px]`}
+        z-30 h-screen w-screen overflow-y-scroll pt-[110px] pb-[200px]`}
       >
         <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center px-10">
           {/* Close Component ------------------------- */}
@@ -51,33 +58,73 @@ export const Work = ({ work }: { work: IWork | null }) => {
           <div className="flex w-full flex-col gap-1">
             {/* Name & Date --------------------------- */}
             <div className="flex w-full items-end justify-between pt-10">
-              <h1 className="text-3xl font-bold">{work?.name}</h1>
-              <div className="flex flex-col items-end">
-                <p className="text-sm">{work?.type}</p>
-                <p className="text-sm">{work?.date}</p>
+              <h1 className="font-serif text-3xl font-bold md:text-5xl">
+                {work?.name}
+              </h1>
+              <div className="flex flex-col items-end text-sm font-semibold md:text-lg lg:text-xl">
+                <p>{work?.type}</p>
+                <p>{work?.date}</p>
               </div>
             </div>
             {/* Line Break ----------------------------- */}
-            <div className="w-full rounded-sm border-b border-black"></div>
-            {/* Information ----------------------------- */}
-            <div className="mt-4 flex flex-col gap-5 md:grid md:grid-cols-[1fr_1fr]">
+            <div className="w-full rounded-sm border-b border-black border-opacity-30"></div>
+            <div className="mt-4 flex flex-col gap-5 md:grid md:grid-cols-[1fr_1.5fr] md:text-xl lg:grid-cols-[1fr_2fr]">
               <div className="flex flex-col gap-6">
-                <p className="flex gap-6">
-                  🔗&nbsp;&nbsp;
-                  <a href={work?.link} target="_blank">
+                {/* Deployed App ------------------------*/}
+                <p className="flex items-center gap-9">
+                  <BsLink45Deg className="-ml-1 text-2xl lg:text-3xl" />
+                  <a
+                    href={work?.link}
+                    target="_blank"
+                    className="hover:text-gray-700"
+                  >
                     Deployed App
                   </a>
                 </p>
-                <p className="flex gap-3">
-                  <BsGithub className="text-xl" />
-                  &nbsp;&nbsp;
-                  <a href={work?.github} target="_blank">
+                {/* Contributors ------------------------*/}
+                {work?.contributors?.some(
+                  (contributor) =>
+                    contributor.name !== "" &&
+                    contributor.role !== "" &&
+                    contributor.linkedin !== ""
+                ) && (
+                  <p className="flex gap-9">
+                    <IoPeopleSharp className="mt-1 text-xl lg:text-2xl" />
+                    <div className="flex flex-col gap-4">
+                      {work?.contributors?.map((contributor, i: number) => (
+                        <div
+                          key={i}
+                          className="flex flex-col border-b border-black border-opacity-30 pr-5"
+                        >
+                          <p className="flex items-center gap-2">
+                            {contributor.name}
+                            <a href={contributor.linkedin} target="_blank">
+                              <BsLinkedin className="text-gray-700 hover:text-black" />
+                            </a>
+                          </p>
+                          <p className="text-base text-gray-700">
+                            {contributor.role}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </p>
+                )}
+                {/* GitHub ------------------------------*/}
+                <p className="flex items-center gap-9">
+                  <BsGithub className="text-xl lg:text-2xl" />
+                  <a
+                    href={work?.github}
+                    target="_blank"
+                    className="hover:text-gray-700"
+                  >
                     GitHub
                   </a>
                 </p>
-                <div className="flex gap-6">
-                  🔧&nbsp;&nbsp;
-                  <ul className="list-none">
+                {/* Technologies ------------------------*/}
+                <div className="flex gap-10">
+                  <FaTools className="mt-1" />
+                  <ul className="flex list-none flex-col gap-1">
                     {work?.technologies?.map(
                       (technology: string, i: number) => (
                         <li key={i}>{technology}</li>
@@ -87,7 +134,8 @@ export const Work = ({ work }: { work: IWork | null }) => {
                 </div>
               </div>
               <div className="grid grid-cols-[50px_1fr]">
-                🐸<p className="">{work?.description}</p>
+                <BsInfoCircle className="mt-1 text-xl lg:text-2xl" />
+                <p>{work?.description}</p>
               </div>
             </div>
             {/* Video Demo -------------------------------- */}
