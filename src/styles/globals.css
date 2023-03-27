@@ -12,9 +12,9 @@
   text-transform: uppercase;
   font-size: 3em;
   font-weight: 700;
-  text-shadow: -5px 0px 0px #e2d6cf,
-    -8px -1px 0px #d4c9c3,
-    -10px -2px 0px #cabfb9;
+  text-shadow: -5px 0px 0px #c3c4c8,
+    -8px -1px 0px #a9a9ab,
+    -10px -2px 0px #919398;
   transform: perspective(200px) rotateY(45deg);
   letter-spacing: -15px;
 }
@@ -38,7 +38,7 @@
   position: relative;
   top: -2px;
   left: 0px;
-  background-color: #BEB8B4;
+  background-color: #7e8083;
   transform: perspective(200px) rotateY(45deg);
 }
 
