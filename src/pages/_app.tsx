@@ -1,12 +1,16 @@
 import { type AppType } from "next/app";
 import { type Session } from "next-auth";
 import { SessionProvider } from "next-auth/react";
-
+import { Inter } from "next/font/google";
 import { api } from "~/utils/api";
-
 import "~/styles/globals.css";
 import Head from "next/head";
 import { IsWorkProvider } from "~/contexts/IsWorkContext";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -39,7 +43,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
         </Head>
-        <div className="min-w-screen flex min-h-screen flex-col bg-[#EFEEED]">
+        <div
+          className={`min-w-screen flex min-h-screen flex-col bg-[#EFEEED] ${inter.variable} font-inter`}
+        >
           <div className="mt-[110px] flex flex-grow">
             <Component {...pageProps} />
           </div>
