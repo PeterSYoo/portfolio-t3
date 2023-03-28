@@ -1,7 +1,9 @@
 import { type NextPage } from "next";
 import { useEffect, useRef, useState } from "react";
+import { AboutSection } from "~/components/about-section/AboutSection.components";
 import { Header } from "~/components/Header.components";
 import { LandingSection } from "~/components/landing-section/LandingSection.components";
+import { PlaySection } from "~/components/play-section/PlaySection.components";
 import { WorkSection } from "~/components/work-section/WorkSection.components";
 
 const Home: NextPage = () => {
@@ -76,17 +78,9 @@ const Home: NextPage = () => {
         {/* Work Section ------------------------------ */}
         <WorkSection workRef={sectionRefs.work} />
         {/* About Section ----------------------------- */}
-        <section
-          ref={sectionRefs.about}
-          id="about"
-          className="h-screen bg-red-100"
-        ></section>
+        <AboutSection aboutRef={sectionRefs.about} />
         {/* Play Section ------------------------------ */}
-        <section
-          ref={sectionRefs.play}
-          id="play"
-          className="h-screen bg-yellow-100"
-        ></section>
+        <PlaySection playRef={sectionRefs.play} />
         {/* Footer Section ---------------------------- */}
         <section id="footer" className="h-[400px] bg-purple-100"></section>
       </main>
