@@ -16,3 +16,11 @@ export interface IWork {
   images: string[];
   youtube: string;
 }
+
+export interface ITechnology {
+  name: string;
+  image: string;
+  width: number;
+  height: number;
+  type: string;
+}
