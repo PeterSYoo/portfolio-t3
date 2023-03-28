@@ -13,10 +13,10 @@ import { FaTools } from "react-icons/fa";
 import { IsWorkContext } from "~/contexts/IsWorkContext";
 
 export const Work = ({ work }: { work: IWork | null }) => {
-  // State -----------------------------------------------
+  // States -----------------------------------------------
   const { isWork, setIsWork } = useContext(IsWorkContext);
 
-  // Declaractions ----------------------------------------
+  // Constants ----------------------------------------
   const prepmealStyle = "bg-gradient-to-br from-[#FFF1E8] to-[#BEB8B4]";
   const talkthruStyle = "bg-gradient-to-br from-[#9C9BA5] to-[#EBEBEE]";
   const nudoodleStyle = "bg-gradient-to-b from-[#FFAECB] to-[#FFBB90]";
@@ -48,11 +48,14 @@ export const Work = ({ work }: { work: IWork | null }) => {
           (work?.name === "TickerSaver" && tickersaverStyle) ||
           ""
         }
-        z-30 h-screen w-screen overflow-y-scroll pt-[110px] pb-[200px]`}
+        z-40 h-screen w-screen overflow-y-scroll pt-[90px] pb-[200px]`}
       >
         <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center px-10">
           {/* Close Component ------------------------- */}
-          <button onClick={() => setIsWork(false)} className="mt-2 opacity-50">
+          <button
+            onClick={() => setIsWork(false)}
+            className="mt-2 opacity-50 hover:opacity-100"
+          >
             <BiChevronsDown className="text-2xl" />
           </button>
           <div className="flex w-full flex-col gap-1">
@@ -61,14 +64,14 @@ export const Work = ({ work }: { work: IWork | null }) => {
               <h1 className="font-serif text-3xl font-bold md:text-5xl">
                 {work?.name}
               </h1>
-              <div className="flex flex-col items-end text-sm font-semibold md:text-lg lg:text-xl">
+              <div className="flex flex-col items-end text-sm md:text-lg">
                 <p>{work?.type}</p>
                 <p>{work?.date}</p>
               </div>
             </div>
             {/* Line Break ----------------------------- */}
             <div className="w-full rounded-sm border-b border-black border-opacity-30"></div>
-            <div className="mt-4 flex flex-col gap-5 md:grid md:grid-cols-[1fr_1.5fr] md:text-xl lg:grid-cols-[1fr_2fr]">
+            <div className="mt-8 flex flex-col gap-5 px-1 md:grid md:grid-cols-[1fr_1.5fr] md:text-xl lg:grid-cols-[1fr_2fr]">
               <div className="flex flex-col gap-6">
                 {/* Deployed App ------------------------*/}
                 <p className="flex items-center gap-9">
