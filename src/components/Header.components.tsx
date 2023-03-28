@@ -19,10 +19,10 @@ export const Header = ({
   const [activeMenu, setActiveMenu] = useState<string>("landing");
   const [skipScrollActiveMenuUpdate, setSkipScrollActiveMenuUpdate] =
     useState<boolean>(false);
-  const { setIsWork } = useContext(IsWorkContext);
+  const { isWork, setIsWork } = useContext(IsWorkContext);
 
   // Declarations ---------------------------
-  const activeMenuClasses = "text-white transition-all duration-1000";
+  const activeMenuClasses = "text-gray-600 transition-all duration-1000";
 
   // Custom Functions --------------------------------
   const scrollToSection = (sectionId: string) => {
@@ -64,87 +64,132 @@ export const Header = ({
     <>
       <section
         id="header"
-        className="fixed top-0 z-30 h-[110px] w-full bg-[#EFEEED] bg-opacity-90 pr-5"
+        className={`fixed top-0 z-30 h-[90px] w-full bg-[#EFEEED] pr-5 ${
+          (isWork === true &&
+            "bg-opacity-0 backdrop-blur transition-all duration-1000") ||
+          ""
+        }`}
       >
         <div className="mx-auto flex h-full max-w-[1440px] items-center px-10">
-          <div
-            onClick={() => handleMenuClick("landing")}
-            className="logo-bg z-0 -mr-[102px] h-[70px] w-[100px] cursor-pointer rounded-lg bg-gradient-to-tr from-[#c4c4c4] to-[#7e8083]"
-          ></div>
-          <div className="logo-bg-2 -z-10 -mr-[101px] h-[65px] w-[100px] rounded-lg"></div>
-          <div className="logo-bg-2 -z-10 -mr-[94px] h-[65px] w-[100px] rounded-lg"></div>
-          <div className="logo-bg-2 -z-10 -mr-[99px] h-[68px] w-[100px] rounded-lg"></div>
-          <div className="logo-bg-2 -z-10 -mr-[98px] h-[67px] w-[100px] rounded-lg"></div>
-          <div className="logo-bg-2 -z-10 -mr-[97px] h-[66px] w-[100px] rounded-lg"></div>
-          <div className="logo-bg-2 -z-10 -mr-[96px] h-[65px] w-[100px] rounded-lg"></div>
           {/* Logo ----------------- */}
           <button
             onClick={() => handleMenuClick("landing")}
-            className="logo z-10 rounded-lg py-3 text-3xl font-bold text-white transition-all"
+            className="flex w-[42px] flex-col rounded bg-gradient-to-tr from-[#e6e6e6] to-[#aeb0b3] px-2 py-1 text-lg font-bold text-gray-600 shadow-sm shadow-black"
           >
-            PY
+            <p
+              style={{
+                textShadow:
+                  "0.1px 0.1px 0 #E8ECF1, 0.2px 0.2px 0 #E8ECF1, 0.3px 0.3px 0 #E8ECF1, 0.4px 0.4px 0 #E8ECF1, 0.5px 0.5px 0 #E8ECF1",
+              }}
+            >
+              P
+            </p>
+            <p
+              style={{
+                textShadow:
+                  "0.1px 0.1px 0 #E8ECF1, 0.2px 0.2px 0 #E8ECF1, 0.3px 0.3px 0 #E8ECF1, 0.4px 0.4px 0 #E8ECF1, 0.5px 0.5px 0 #E8ECF1",
+              }}
+              className="-mt-2 flex w-full justify-end"
+            >
+              Y
+            </p>
           </button>
           {/* Menu ----------------- */}
           <div className="flex w-full justify-end md:hidden">
-            <button className="pr-5 text-4xl">
+            <button className="text-3xl">
               <RxHamburgerMenu />
             </button>
           </div>
-          <div className="hidden w-full items-center justify-end gap-14 font-bold md:flex">
+          <div className="hidden w-full items-center justify-end gap-14 rounded-lg font-semibold text-gray-700 md:flex">
             {/* Menu Icon Background ------------- */}
             <div
               className={`${
                 activeMenu === "work"
-                  ? "left-[113px] w-[65px]"
+                  ? "left-[116px] w-[70px]"
                   : activeMenu === "about"
-                  ? "left-[226px] w-[73px]"
+                  ? "left-[231px] w-[75px]"
                   : activeMenu === "play"
-                  ? "left-[326px] w-[63px]"
+                  ? "left-[337px] w-[70px]"
                   : activeMenu === "resume"
-                  ? "left-[447px] w-[87px]"
+                  ? "left-[458px] w-[85px]"
                   : activeMenu === "email"
-                  ? "left-[558px] w-[75px]"
+                  ? "left-[572px] w-[75px]"
                   : activeMenu === "landing"
                   ? "left-0 w-0"
                   : "opacity-100"
-              } relative top-0 -z-10 h-8 rounded bg-gradient-to-tr from-[#c4c4c4] to-[#7e8083] shadow shadow-[#7e8083] transition-all duration-500 ease-in-out`}
+              } relative top-0 -z-10 h-8 rounded bg-gradient-to-tr from-[#e6e6e6] to-[#aeb0b3] shadow-sm shadow-black transition-all duration-500 ease-in-out`}
             />
             <button
+              style={
+                (activeMenu === "work" && {
+                  textShadow:
+                    "0.1px 0.1px 0 #E8ECF1, 0.2px 0.2px 0 #E8ECF1, 0.3px 0.3px 0 #E8ECF1, 0.4px 0.4px 0 #E8ECF1, 0.5px 0.5px 0 #E8ECF1",
+                }) ||
+                {}
+              }
               className={`${
                 (activeMenu === "work" && activeMenuClasses) || ""
-              }`}
+              } tracking-wider`}
               onClick={() => handleMenuClick("work")}
             >
               WORK
             </button>
             <button
+              style={
+                (activeMenu === "about" && {
+                  textShadow:
+                    "0.1px 0.1px 0 #E8ECF1, 0.2px 0.2px 0 #E8ECF1, 0.3px 0.3px 0 #E8ECF1, 0.4px 0.4px 0 #E8ECF1, 0.5px 0.5px 0 #E8ECF1",
+                }) ||
+                {}
+              }
               className={`${
                 (activeMenu === "about" && activeMenuClasses) || ""
-              }`}
+              } tracking-wider`}
               onClick={() => handleMenuClick("about")}
             >
               ABOUT
             </button>
             <button
+              style={
+                (activeMenu === "play" && {
+                  textShadow:
+                    "0.1px 0.1px 0 #E8ECF1, 0.2px 0.2px 0 #E8ECF1, 0.3px 0.3px 0 #E8ECF1, 0.4px 0.4px 0 #E8ECF1, 0.5px 0.5px 0 #E8ECF1",
+                }) ||
+                {}
+              }
               className={`${
                 (activeMenu === "play" && activeMenuClasses) || ""
-              }`}
+              } tracking-wider`}
               onClick={() => handleMenuClick("play")}
             >
               PLAY
             </button>
             <button
+              style={
+                (activeMenu === "resume" && {
+                  textShadow:
+                    "0.1px 0.1px 0 #E8ECF1, 0.2px 0.2px 0 #E8ECF1, 0.3px 0.3px 0 #E8ECF1, 0.4px 0.4px 0 #E8ECF1, 0.5px 0.5px 0 #E8ECF1",
+                }) ||
+                {}
+              }
               className={`${
                 (activeMenu === "resume" && activeMenuClasses) || ""
-              }`}
+              } tracking-wider`}
               onClick={() => handleMenuClick("resume")}
             >
               RESUME
             </button>
             <button
+              style={
+                (activeMenu === "email" && {
+                  textShadow:
+                    "0.1px 0.1px 0 #E8ECF1, 0.2px 0.2px 0 #E8ECF1, 0.3px 0.3px 0 #E8ECF1, 0.4px 0.4px 0 #E8ECF1, 0.5px 0.5px 0 #E8ECF1",
+                }) ||
+                {}
+              }
               className={`${
                 (activeMenu === "email" && activeMenuClasses) || ""
-              }`}
+              } tracking-wider`}
               onClick={() => handleMenuClick("email")}
             >
               EMAIL
