@@ -21,7 +21,7 @@ export const Header = ({
     useState<boolean>(false);
   const { isWork, setIsWork } = useContext(IsWorkContext);
 
-  // Declarations ---------------------------
+  // Constants -------------------------------
   const activeMenuClasses = "text-gray-600 transition-all duration-1000";
 
   // Custom Functions --------------------------------
