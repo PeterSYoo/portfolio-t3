@@ -20,7 +20,7 @@ export const LandingSection = ({
           {/* Name ---------------- */}
           <div className="mt-[200px]">
             <p className="pl-1 text-[20px]">Hi 👋, my name is</p>
-            <h1 className="text-[64px] font-semibold leading-[80px] tracking-tight">
+            <h1 className="font-serif text-[64px] font-semibold italic leading-[80px] tracking-wide">
               Peter Yoo
             </h1>
             <div className="flex items-center gap-5">
@@ -51,7 +51,7 @@ export const LandingSection = ({
             <h1 className="font-serif text-[76px] leading-[75px]">
               <TypingText
                 texts={[
-                  "Always curious about learning new technologies.",
+                  "I am always curious about learning new technologies.",
                   "Teamwork makes the web work.",
                 ]}
               />
