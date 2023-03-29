@@ -19,13 +19,17 @@ export const LandingSection = ({
         <div className="flex w-full max-w-[1005px] flex-col gap-[30px] px-5 md:gap-[40px]">
           {/* Name ---------------- */}
           <div className="mt-[200px]">
-            <p className="pl-1 text-[20px]">Hi 👋, my name is</p>
-            <h1 className="font-serif text-[64px] font-semibold italic leading-[80px] tracking-wide">
-              Peter Yoo
+            <p className="pl-1 text-[20px] font-light">Hi 👋, my name is</p>
+            <h1 className="font-serif text-[64px] font-semibold italic leading-[80px] tracking-wide text-gray-800">
+              Peter Yoo{" "}
+              <span className="font-inter text-2xl font-light not-italic">
+                a
+              </span>
             </h1>
             <div className="flex items-center gap-5">
-              <p className="pl-1 text-[20px]">
-                Full Stack Developer&nbsp;&nbsp;·&nbsp;&nbsp;Artist&nbsp;&nbsp;·
+              <p className="pl-1 text-[20px] font-light">
+                Full-Stack Software
+                Engineer&nbsp;&nbsp;·&nbsp;&nbsp;Artist&nbsp;&nbsp;·
               </p>
               <a href="https://www.linkedin.com/in/petersyoo/" target="_blank">
                 <BsLinkedin className="text-xl text-[#0077B7]" />
@@ -48,7 +52,7 @@ export const LandingSection = ({
           </div>
           {/* Animated Text ---------------- */}
           <div className="">
-            <h1 className="font-serif text-[76px] leading-[75px]">
+            <h1 className="font-serif text-[76px] font-bold leading-[75px] tracking-wide text-gray-800">
               <TypingText
                 texts={[
                   "I am always curious about learning new technologies.",
