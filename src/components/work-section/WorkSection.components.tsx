@@ -220,7 +220,7 @@ export const WorkSection = ({
       <section
         ref={workRef}
         id="work"
-        className="mx-auto w-full max-w-[1840px] px-14 pt-[170px] pb-[200px]"
+        className="mx-auto w-full max-w-[1440px] px-8 pt-[170px] pb-[200px]"
       >
         <div className="grid w-full grid-cols-1 gap-[40px] lg:grid-cols-2">
           {portfolio.map((work, i: number) => (
