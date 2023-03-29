@@ -37,10 +37,11 @@ export const ImageModal = ({
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
   // JSX -----------------------------------------
   return (
     <>
-      <section className="fixed top-0 left-0 z-50 flex h-screen w-full justify-center bg-black/90 px-20">
+      <section className="fixed top-0 left-0 z-50 flex h-screen w-full justify-center bg-black/90">
         <div className="flex h-full w-full flex-col items-center justify-center">
           <div className="h-fit w-fit justify-center rounded-lg p-5">
             <div className="flex w-full justify-between">
