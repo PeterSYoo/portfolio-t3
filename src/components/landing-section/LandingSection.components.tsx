@@ -16,7 +16,7 @@ export const LandingSection = ({
         id="landing"
         className="-mt-[110px] flex h-screen justify-center"
       >
-        <div className="flex w-full max-w-[1005px] flex-col gap-[30px] px-5 md:gap-[40px]">
+        <div className="flex w-full max-w-[1005px] flex-col gap-[30px] px-10 md:gap-[40px]">
           {/* Name ---------------- */}
           <div className="mt-[200px]">
             <p className="pl-1 text-[20px] font-light">Hi 👋, my name is</p>

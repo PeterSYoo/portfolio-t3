@@ -287,139 +287,139 @@ export const AboutSection = ({
   // JSX --------------------------------------
   return (
     <>
-      <section ref={aboutRef} id="about" className="min-h-screen">
-        <div className="mx-auto flex h-full max-w-[1440px] flex-col gap-10 px-10 md:grid md:grid-rows-[600px_1fr]">
-          {/* Row 1 -----------------------------------------*/}
-          <div className="flex flex-col items-center justify-center gap-8 md:grid md:grid-cols-[302px_1fr] md:gap-14">
-            {/* Column 1 -----------------------------------------*/}
-            <div className="flex flex-col gap-8">
-              <div>
-                <Image
-                  src="https://res.cloudinary.com/dryh1nvhk/image/upload/v1679903336/Portfolio/About/py-avatar_cecwkc.png"
-                  width={302}
-                  height={302}
-                  alt="avatar"
-                />
-              </div>
-              <h1 className="text-center font-serif text-3xl">
-                Hi, I&apos;m{" "}
-                <span className="font-serif font-bold italic">Peter!</span>
-              </h1>
+      <section
+        ref={aboutRef}
+        id="about"
+        className="flex flex-col gap-20 pt-[140px]"
+      >
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-10 px-10 md:grid md:grid-cols-[302px_1fr] md:gap-14">
+          {/* Column 1 -----------------------------------------*/}
+          <div className="flex flex-col items-center gap-8">
+            <div>
+              <Image
+                src="https://res.cloudinary.com/dryh1nvhk/image/upload/v1679903336/Portfolio/About/py-avatar_cecwkc.png"
+                width={302}
+                height={302}
+                alt="avatar"
+              />
             </div>
-            {/* Column 2 -----------------------------------------*/}
-            <div className="flex flex-col gap-10">
+            <h1 className="text-center font-serif text-3xl">
+              Hi, I&apos;m{" "}
+              <span className="font-serif font-bold italic">Peter!</span>
+            </h1>
+          </div>
+          {/* Column 2 -----------------------------------------*/}
+          <div className="flex flex-col gap-10">
+            <p className="text-xl">
+              I&apos;m a Full-Stack Engineer and artist who has worked
+              professionally as a Storyboard Artist at Marvel Animation. Since
+              graduating from General Assembly&apos;s bootcamp, I&apos;ve built
+              over a dozen projects using various technologies, including
+              NextJS, TypeScript, Express, SQL and NoSQL databases, WebSockets,
+              WebRTC architecture, OpenAI, and my current favorite stack, the T3
+              stack. I&apos;ve been actively involved with organizations such as
+              Hack for LA, hackathons, and I&apos;ve also worked in a
+              cross-functional team of designers and devs in a 6-week Agile
+              program. I am actively continuing my self learning by continuing
+              to challenge myself on each new app project that I start.
+            </p>
+            <div className="flex flex-col gap-2">
+              <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700">
+                Beyond Coding
+              </h1>
               <p className="text-xl">
-                I&apos;m a Full-Stack Engineer and artist who has worked
-                professionally as a Storyboard Artist at Marvel Animation. Since
-                graduating from General Assembly&apos;s bootcamp, I&apos;ve
-                built over a dozen projects using various technologies,
-                including NextJS, TypeScript, Express, SQL and NoSQL databases,
-                WebSockets, WebRTC architecture, OpenAI, and my current favorite
-                stack, the T3 stack. I&apos;ve been actively involved with
-                organizations such as Hack for LA, hackathons, and I&apos;ve
-                also worked in a cross-functional team of designers and devs in
-                a 6-week Agile program. I am actively continuing my self
-                learning by continuing to challenge myself on each new app
-                project that I start.
+                I studied Illustration & Design and I have a passion for
+                traditional figurative art and I love to spend my free time
+                going to live figure drawing sessions and doing oil paintings.
               </p>
-              <div className="flex flex-col gap-2">
-                <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700">
-                  Beyond Coding
-                </h1>
-                <p className="text-xl">
-                  I studied Illustration & Design and I have a passion for
-                  traditional figurative art and love to spend my free time
-                  going to live figure drawing sessions and doing oil paintings.
-                </p>
-              </div>
             </div>
           </div>
-          {/* Row 2 -----------------------------------------*/}
-          <div className="flex w-full flex-col gap-14">
-            {/* Line Break ---------------------------------- */}
-            <div className="border-b border-black/20"></div>
-            {/* Languages ----------------------------------- */}
-            <div className="mt-10 flex flex-col gap-8">
-              <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
-                Languages
-              </h1>
-              <div className="flex flex-wrap items-center gap-14">
-                {technologies
-                  .filter(
-                    (technology: ITechnology) => technology.type === "languages"
-                  )
-                  .map((language, index: number) => (
-                    <Technology key={index} technology={language} />
-                  ))}
-              </div>
+        </div>
+        {/* Technologies ---------------------- */}
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-14 px-5">
+          {/* Line Break ---------------------------------- */}
+          <div className="border-b border-black/20"></div>
+          {/* Languages ----------------------------------- */}
+          <div className="mt-10 flex flex-col gap-8">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+              Languages
+            </h1>
+            <div className="flex flex-wrap items-center gap-14">
+              {technologies
+                .filter(
+                  (technology: ITechnology) => technology.type === "languages"
+                )
+                .map((language, index: number) => (
+                  <Technology key={index} technology={language} />
+                ))}
             </div>
-            {/* Line Break ---------------------------------- */}
-            <div className="border-b border-black/20"></div>
-            {/* Front-End ----------------------------------- */}
-            <div className="mt-10 flex flex-col gap-8">
-              <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
-                Front-End
-              </h1>
-              <div className="flex flex-wrap items-center gap-14">
-                {technologies
-                  .filter(
-                    (technology: ITechnology) => technology.type === "front-end"
-                  )
-                  .map((language, index: number) => (
-                    <Technology key={index} technology={language} />
-                  ))}
-              </div>
+          </div>
+          {/* Line Break ---------------------------------- */}
+          <div className="border-b border-black/20"></div>
+          {/* Front-End ----------------------------------- */}
+          <div className="mt-10 flex flex-col gap-8">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+              Front-End
+            </h1>
+            <div className="flex flex-wrap items-center gap-14">
+              {technologies
+                .filter(
+                  (technology: ITechnology) => technology.type === "front-end"
+                )
+                .map((language, index: number) => (
+                  <Technology key={index} technology={language} />
+                ))}
             </div>
-            {/* Line Break ---------------------------------- */}
-            <div className="border-b border-black/20"></div>
-            {/* Back-End ----------------------------------- */}
-            <div className="mt-10 flex flex-col gap-8">
-              <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
-                Back-End
-              </h1>
-              <div className="flex flex-wrap items-center gap-14">
-                {technologies
-                  .filter(
-                    (technology: ITechnology) => technology.type === "back-end"
-                  )
-                  .map((language, index: number) => (
-                    <Technology key={index} technology={language} />
-                  ))}
-              </div>
+          </div>
+          {/* Line Break ---------------------------------- */}
+          <div className="border-b border-black/20"></div>
+          {/* Back-End ----------------------------------- */}
+          <div className="mt-10 flex flex-col gap-8">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+              Back-End
+            </h1>
+            <div className="flex flex-wrap items-center gap-14">
+              {technologies
+                .filter(
+                  (technology: ITechnology) => technology.type === "back-end"
+                )
+                .map((language, index: number) => (
+                  <Technology key={index} technology={language} />
+                ))}
             </div>
-            {/* Line Break ---------------------------------- */}
-            <div className="border-b border-black/20"></div>
-            {/* Databases ----------------------------------- */}
-            <div className="mt-10 flex flex-col gap-8">
-              <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
-                Databases
-              </h1>
-              <div className="flex flex-wrap items-center gap-14">
-                {technologies
-                  .filter(
-                    (technology: ITechnology) => technology.type === "databases"
-                  )
-                  .map((language, index: number) => (
-                    <Technology key={index} technology={language} />
-                  ))}
-              </div>
+          </div>
+          {/* Line Break ---------------------------------- */}
+          <div className="border-b border-black/20"></div>
+          {/* Databases ----------------------------------- */}
+          <div className="mt-10 flex flex-col gap-8">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+              Databases
+            </h1>
+            <div className="flex flex-wrap items-center gap-14">
+              {technologies
+                .filter(
+                  (technology: ITechnology) => technology.type === "databases"
+                )
+                .map((language, index: number) => (
+                  <Technology key={index} technology={language} />
+                ))}
             </div>
-            {/* Line Break ---------------------------------- */}
-            <div className="border-b border-black/20"></div>
-            {/* Dev Tools ----------------------------------- */}
-            <div className="mt-10 flex flex-col gap-8">
-              <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
-                Dev Tools
-              </h1>
-              <div className="flex flex-wrap items-center gap-14">
-                {technologies
-                  .filter(
-                    (technology: ITechnology) => technology.type === "dev tools"
-                  )
-                  .map((language, index: number) => (
-                    <Technology key={index} technology={language} />
-                  ))}
-              </div>
+          </div>
+          {/* Line Break ---------------------------------- */}
+          <div className="border-b border-black/20"></div>
+          {/* Dev Tools ----------------------------------- */}
+          <div className="mt-10 flex flex-col gap-8">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+              Dev Tools
+            </h1>
+            <div className="flex flex-wrap items-center gap-14">
+              {technologies
+                .filter(
+                  (technology: ITechnology) => technology.type === "dev tools"
+                )
+                .map((language, index: number) => (
+                  <Technology key={index} technology={language} />
+                ))}
             </div>
           </div>
         </div>
