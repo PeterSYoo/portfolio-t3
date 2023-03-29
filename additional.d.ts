@@ -24,3 +24,12 @@ export interface ITechnology {
   height: number;
   type: string;
 }
+
+export interface IImagePlay {
+  url: string;
+  urlWidth: number;
+  urlHeight: number;
+  thumb: string;
+  thumbWidth: number;
+  thumbHeight: number;
+}
