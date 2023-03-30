@@ -12,6 +12,8 @@ export const ImageModal = ({
   setIsImage,
   handlePrevClick,
   handleNextClick,
+  isImageLoading,
+  setIsImageLoading,
 }: {
   image: IImagePlay | null | undefined;
   imageIndex: number;
@@ -19,10 +21,11 @@ export const ImageModal = ({
   setIsImage: (arg0: boolean) => void;
   handlePrevClick: () => void;
   handleNextClick: () => void;
+  isImageLoading: boolean;
+  setIsImageLoading: (arg0: boolean) => void;
 }) => {
   // States --------------------------------------------
   const [isClicked, setIsClicked] = useState<boolean | null>(null);
-  const [isImageLoading, setIsImageLoading] = useState<boolean>(true);
 
   // Custom Functions -----------------------------------------
   const handleBlurClick = () => {
@@ -34,8 +37,10 @@ export const ImageModal = ({
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
         handlePrevClick();
+        setIsImageLoading(true);
       } else if (event.key === "ArrowRight") {
         handleNextClick();
+        setIsImageLoading(true);
       } else if (event.key === "Escape") {
         setIsImage(false);
       }
