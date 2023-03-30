@@ -32,4 +32,5 @@ export interface IImagePlay {
   thumb: string;
   thumbWidth: number;
   thumbHeight: number;
+  blur: boolean;
 }
