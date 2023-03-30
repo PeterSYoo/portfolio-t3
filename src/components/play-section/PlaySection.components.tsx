@@ -236,17 +236,17 @@ export const PlaySection = ({
   };
 
   const handlePrevClick = () => {
+    setIsImageLoading(true);
     setImageIndex((prevIndex: number) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
-    setIsImageLoading(true);
   };
 
   const handleNextClick = () => {
+    setIsImageLoading(true);
     setImageIndex((prevIndex: number) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
-    setIsImageLoading(true);
   };
 
   // Effects -----------------------------------------
