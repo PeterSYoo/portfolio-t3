@@ -52,7 +52,7 @@ export const LandingSection = ({
           </div>
           {/* Animated Text ---------------- */}
           <div className="">
-            <h1 className="font-serif text-[76px] font-bold leading-[75px] tracking-wide text-gray-800">
+            <h1 className="font-serif text-[76px] italic leading-[75px] text-gray-800">
               <TypingText
                 texts={[
                   "I am always curious about learning new technologies.",
