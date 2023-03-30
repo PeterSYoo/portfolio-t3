@@ -24,3 +24,14 @@
 .cursor.typing {
   animation: none;
 }
+
+/* Loading Spinner ----------------------------------- */
+.spin-fast {
+  animation: spin-fast 0.5s linear infinite;
+}
+
+@keyframes spin-fast {
+  to {
+    transform: rotate(360deg);
+  }
+}
