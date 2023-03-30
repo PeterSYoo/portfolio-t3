@@ -22,6 +22,7 @@ export const ImageModal = ({
 }) => {
   // States --------------------------------------------
   const [isClicked, setIsClicked] = useState<boolean | null>(null);
+  const [isImageLoading, setIsImageLoading] = useState<boolean>(true);
 
   // Custom Functions -----------------------------------------
   const handleBlurClick = () => {
@@ -86,6 +87,7 @@ export const ImageModal = ({
                   height={image?.urlHeight}
                   alt="play full"
                   className="rounded-lg"
+                  onLoad={() => setIsImageLoading(false)}
                 />
                 <div
                   onClick={handleBlurClick}
@@ -95,15 +97,21 @@ export const ImageModal = ({
                   ${(!isClicked && "cursor-pointer") || ""}
                   absolute inset-0 bg-white/10 transition-opacity`}
                 >
-                  <div className="flex h-full flex-col items-center justify-center gap-2">
-                    {(!isClicked && (
-                      <>
-                        <AiFillEye className="text-5xl text-black/50 group-hover:text-black/80" />
-                        <p className="font-bold text-red-500">Warning Nudity</p>
-                      </>
-                    )) ||
-                      ""}
-                  </div>
+                  {isImageLoading ? (
+                    <div className="spin-fast flex h-6 w-6 items-center justify-center rounded-full border-2 border-solid border-[#766f6a] border-current border-r-transparent text-[#766f6a]"></div>
+                  ) : (
+                    <div className="flex h-full flex-col items-center justify-center gap-2">
+                      {(!isClicked && (
+                        <>
+                          <AiFillEye className="text-5xl text-black/50 group-hover:text-black/80" />
+                          <p className="font-bold text-red-500">
+                            Warning Nudity
+                          </p>
+                        </>
+                      )) ||
+                        ""}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
