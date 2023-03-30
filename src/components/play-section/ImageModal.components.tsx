@@ -2,7 +2,8 @@ import Image from "next/image";
 import { RiCloseFill } from "react-icons/ri";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { type IImagePlay } from "additional";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { AiFillEye } from "react-icons/ai";
 
 export const ImageModal = ({
   image,
@@ -19,6 +20,14 @@ export const ImageModal = ({
   handlePrevClick: () => void;
   handleNextClick: () => void;
 }) => {
+  // States --------------------------------------------
+  const [isClicked, setIsClicked] = useState<boolean | null>(null);
+
+  // Custom Functions -----------------------------------------
+  const handleBlurClick = () => {
+    setIsClicked(true);
+  };
+
   // Effects -----------------------------------------
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -38,12 +47,20 @@ export const ImageModal = ({
     };
   }, []);
 
+  useEffect(() => {
+    if (image?.blur === true) {
+      setIsClicked(false);
+    } else {
+      setIsClicked(true);
+    }
+  }, [image?.blur, image]);
+
   // JSX -----------------------------------------
   return (
     <>
       <section className="fixed top-0 left-0 z-50 flex h-screen w-full justify-center bg-black/90">
         <div className="flex h-full w-full flex-col items-center justify-center">
-          <div className="h-fit w-fit justify-center rounded-lg p-5">
+          <div className="flex flex-col justify-center rounded-lg">
             <div className="flex w-full justify-between">
               <p className="text-white">
                 {imageIndex + 1} / {imagesTotal}
@@ -62,13 +79,33 @@ export const ImageModal = ({
               </button>
             </div>
             <div className="flex flex-col items-center justify-center gap-12 pt-3">
-              <Image
-                src={image?.url || ""}
-                width={image?.urlWidth}
-                height={image?.urlHeight}
-                alt="play full"
-                className="rounded-lg"
-              />
+              <div className="group relative">
+                <Image
+                  src={image?.url || ""}
+                  width={image?.urlWidth}
+                  height={image?.urlHeight}
+                  alt="play full"
+                  className="rounded-lg"
+                />
+                <div
+                  onClick={handleBlurClick}
+                  className={`
+                  ${(isClicked && "backdrop-blur-none") || ""}
+                  ${(image?.blur && "backdrop-blur") || ""}
+                  ${(!isClicked && "cursor-pointer") || ""}
+                  absolute inset-0 bg-white/10 transition-opacity`}
+                >
+                  <div className="flex h-full flex-col items-center justify-center gap-2">
+                    {(!isClicked && (
+                      <>
+                        <AiFillEye className="text-5xl text-black/50 group-hover:text-black/80" />
+                        <p className="font-bold text-red-500">Warning Nudity</p>
+                      </>
+                    )) ||
+                      ""}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
