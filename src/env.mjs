@@ -27,7 +27,7 @@ const server = z.object({
  */
 const client = z.object({
   // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
-  NEXT_PUBLIC_GOOGLE_ANALYITICS: z.string().min(1),
+  NEXT_PUBLIC_GOOGLE_ANALYTICS: z.string().min(1),
 });
 
 /**
@@ -42,7 +42,7 @@ const processEnv = {
   // NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
   // NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
-  NEXT_PUBLIC_GOOGLE_ANALYITICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYITICS,
+  NEXT_PUBLIC_GOOGLE_ANALYTICS: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS,
 };
 
 // Don't touch the part below
