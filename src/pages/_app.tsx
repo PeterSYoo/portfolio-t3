@@ -6,6 +6,7 @@ import { api } from "~/utils/api";
 import "~/styles/globals.css";
 import Head from "next/head";
 import { IsWorkProvider } from "~/contexts/IsWorkContext";
+import { env } from "~/env.mjs";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,6 +43,22 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
+          {/* Google Tag */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${env.NEXT_PUBLIC_GOOGLE_ANALYITICS}`}
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || []; function gtag()
+            {dataLayer.push(arguments);}
+            gtag('js', new Date()); gtag('config', '${env.NEXT_PUBLIC_GOOGLE_ANALYITICS}', {
+              page_path: window.location.pathname,
+            })
+            `,
+            }}
+          />
         </Head>
         <div
           className={`min-w-screen flex min-h-screen flex-col bg-[#EFEEED] ${inter.variable} font-inter`}
