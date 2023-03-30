@@ -36,11 +36,11 @@ export const ImageModal = ({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
+        setIsImageLoading(true);
         handlePrevClick();
-        setIsImageLoading(true);
       } else if (event.key === "ArrowRight") {
-        handleNextClick();
         setIsImageLoading(true);
+        handleNextClick();
       } else if (event.key === "Escape") {
         setIsImage(false);
       }
