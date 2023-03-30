@@ -47,7 +47,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${env.NEXT_PUBLIC_GOOGLE_ANALYITICS}`}
-          ></script>
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
