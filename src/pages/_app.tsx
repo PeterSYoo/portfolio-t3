@@ -7,6 +7,7 @@ import "~/styles/globals.css";
 import Head from "next/head";
 import { IsWorkProvider } from "~/contexts/IsWorkContext";
 import { env } from "~/env.mjs";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,23 +44,22 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
-          {/* Google Tag */}
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || []; function gtag()
-            {dataLayer.push(arguments);}
-            gtag('js', new Date()); gtag('config', '${env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
-            })
-            `,
-            }}
-          />
         </Head>
+        {/* Google Tag */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+          `}
+        </Script>
+
         <div
           className={`min-w-screen flex min-h-screen flex-col bg-[#EFEEED] ${inter.variable} font-inter`}
         >
