@@ -13,7 +13,7 @@ export const PlaySection = ({
   const [isImage, setIsImage] = useState<boolean>(false);
   const [imageObj, setImageObj] = useState<IImagePlay | null | undefined>(null);
   const [imageIndex, setImageIndex] = useState<number>(0);
-  const [isImageHover, setIsImageHover] = useState<boolean>(false);
+  const [isImageLoading, setIsImageLoading] = useState<boolean>(true);
 
   const images = [
     {
@@ -239,12 +239,14 @@ export const PlaySection = ({
     setImageIndex((prevIndex: number) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
+    setIsImageLoading(true);
   };
 
   const handleNextClick = () => {
     setImageIndex((prevIndex: number) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
+    setIsImageLoading(true);
   };
 
   // Effects -----------------------------------------
@@ -263,6 +265,8 @@ export const PlaySection = ({
           setIsImage={setIsImage}
           handlePrevClick={handlePrevClick}
           handleNextClick={handleNextClick}
+          isImageLoading={isImageLoading}
+          setIsImageLoading={setIsImageLoading}
         />
       )}
       <section
