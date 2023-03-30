@@ -81,14 +81,18 @@ export const ImageModal = ({
             </div>
             <div className="flex flex-col items-center justify-center gap-12 pt-3">
               <div className="group relative">
-                <Image
-                  src={image?.url || ""}
-                  width={image?.urlWidth}
-                  height={image?.urlHeight}
-                  alt="play full"
-                  className="rounded-lg"
-                  onLoad={() => setIsImageLoading(false)}
-                />
+                {(!isImageLoading && (
+                  <Image
+                    src={image?.url || ""}
+                    width={image?.urlWidth}
+                    height={image?.urlHeight}
+                    alt="play full"
+                    className="rounded-lg"
+                    onLoad={() => setIsImageLoading(false)}
+                  />
+                )) ||
+                  ""}
+
                 <div
                   onClick={handleBlurClick}
                   className={`
