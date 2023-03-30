@@ -1,6 +1,7 @@
 import { type IImagePlay } from "additional";
 import Image from "next/image";
 import { useEffect, useState, type RefObject } from "react";
+import { AiOutlineExpandAlt } from "react-icons/ai";
 import { ImageModal } from "./ImageModal.components";
 
 export const PlaySection = ({
@@ -12,6 +13,7 @@ export const PlaySection = ({
   const [isImage, setIsImage] = useState<boolean>(false);
   const [imageObj, setImageObj] = useState<IImagePlay | null | undefined>(null);
   const [imageIndex, setImageIndex] = useState<number>(0);
+  const [isImageHover, setIsImageHover] = useState<boolean>(false);
 
   const images = [
     {
@@ -22,6 +24,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070574/Portfolio/Play/Thumbs/Group_25_zzw3rf.png",
       thumbWidth: 300,
       thumbHeight: 301,
+      blur: false,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070688/Portfolio/Play/20230328_163935_1_zvecey.png",
@@ -31,6 +34,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070574/Portfolio/Play/Thumbs/20230328_163935_2_fcig75.png",
       thumbWidth: 300,
       thumbHeight: 136,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070687/Portfolio/Play/Group_22_ozitaa.png",
@@ -40,6 +44,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070574/Portfolio/Play/Thumbs/Group_26_baz6iz.png",
       thumbWidth: 300,
       thumbHeight: 300,
+      blur: false,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070685/Portfolio/Play/20230328_163842_1_dwtgyw.png",
@@ -49,6 +54,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070573/Portfolio/Play/Thumbs/20230328_163842_2_oyxor0.png",
       thumbWidth: 300,
       thumbHeight: 658,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070686/Portfolio/Play/20230328_164223_1_a7r2we.png",
@@ -58,6 +64,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070574/Portfolio/Play/Thumbs/20230328_164223_2_oloepx.png",
       thumbWidth: 300,
       thumbHeight: 254,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070687/Portfolio/Play/Group_20_on83ec.png",
@@ -67,6 +74,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070575/Portfolio/Play/Thumbs/Group_24_lgudac.png",
       thumbWidth: 300,
       thumbHeight: 173,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070685/Portfolio/Play/20230328_163913_1_mfzfwe.png",
@@ -76,6 +84,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070573/Portfolio/Play/Thumbs/20230328_163913_2_kygg61.png",
       thumbWidth: 300,
       thumbHeight: 730,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070685/Portfolio/Play/20230328_164052_1_vdmuly.png",
@@ -85,6 +94,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070574/Portfolio/Play/Thumbs/20230328_164052_2_k7zr27.png",
       thumbWidth: 300,
       thumbHeight: 527,
+      blur: false,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074701/Portfolio/Play/20230328_164302_1_w6luzz.png",
@@ -94,6 +104,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074669/Portfolio/Play/Thumbs/20230328_164302_2_u1oxp7.png",
       thumbWidth: 300,
       thumbHeight: 512,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070686/Portfolio/Play/20230328_164119_1_uuy4ct.png",
@@ -103,6 +114,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070574/Portfolio/Play/Thumbs/20230328_164119_2_qnqli0.png",
       thumbWidth: 300,
       thumbHeight: 245,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070688/Portfolio/Play/20230328_164328_1_jrxx6w.png",
@@ -112,6 +124,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070574/Portfolio/Play/Thumbs/20230328_164328_2_rah0o8.png",
       thumbWidth: 300,
       thumbHeight: 417,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070687/Portfolio/Play/image_53_bzursi.png",
@@ -121,6 +134,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070574/Portfolio/Play/Thumbs/image_54_qddmzf.png",
       thumbWidth: 300,
       thumbHeight: 300,
+      blur: false,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680073516/Portfolio/Play/20230328_163823_3_ysgio3.png",
@@ -130,6 +144,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680073482/Portfolio/Play/Thumbs/20230328_163823_4_plqy6b.png",
       thumbWidth: 300,
       thumbHeight: 725,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070686/Portfolio/Play/20230328_164713_1_yzxlde.png",
@@ -139,6 +154,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070574/Portfolio/Play/Thumbs/20230328_164713_2_nrz524.png",
       thumbWidth: 300,
       thumbHeight: 374,
+      blur: false,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074409/Portfolio/Play/20230328_163713_3_y5wrq7.png",
@@ -148,6 +164,17 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074383/Portfolio/Play/Thumbs/20230328_163713_4_yunm4v.png",
       thumbWidth: 300,
       thumbHeight: 302,
+      blur: true,
+    },
+    {
+      url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680124876/Portfolio/Play/20230329_131053_1_hhy0m1.png",
+      urlWidth: 722,
+      urlHeight: 900,
+      thumb:
+        "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680124966/Portfolio/Play/Thumbs/20230329_131053_2_d0f79y.png",
+      thumbWidth: 300,
+      thumbHeight: 375,
+      blur: false,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074599/Portfolio/Play/20230328_163925_3_qt9vcm.png",
@@ -157,6 +184,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074578/Portfolio/Play/Thumbs/20230328_163925_4_jvjjel.png",
       thumbWidth: 300,
       thumbHeight: 496,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070685/Portfolio/Play/20230328_163852_1_sbkiih.png",
@@ -166,6 +194,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680070573/Portfolio/Play/Thumbs/20230328_163852_2_cjerjd.png",
       thumbWidth: 300,
       thumbHeight: 244,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074101/Portfolio/Play/20230328_163833_3_o0dpxe.png",
@@ -175,6 +204,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074075/Portfolio/Play/Thumbs/20230328_163833_4_htzghz.png",
       thumbWidth: 300,
       thumbHeight: 741,
+      blur: false,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680073212/Portfolio/Play/20230328_163801_1_1_csx7wc.png",
@@ -184,6 +214,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680073249/Portfolio/Play/Thumbs/20230328_163801_1_2_bjhkgh.png",
       thumbWidth: 300,
       thumbHeight: 612,
+      blur: true,
     },
     {
       url: "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074235/Portfolio/Play/20230328_163812_3_sc0coo.png",
@@ -193,6 +224,7 @@ export const PlaySection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1680074216/Portfolio/Play/Thumbs/20230328_163812_4_wbmszr.png",
       thumbWidth: 300,
       thumbHeight: 519,
+      blur: false,
     },
   ];
 
@@ -242,14 +274,25 @@ export const PlaySection = ({
           <button
             onClick={() => handleThumbClick(image, index)}
             key={index}
-            className="pb-5"
+            className="relative mb-5 overflow-hidden"
           >
-            <Image
-              src={image.thumb}
-              width={image.thumbWidth}
-              height={image.thumbHeight}
-              alt="play thumbnail"
-            />
+            <div className="group relative">
+              <Image
+                src={image.thumb}
+                width={image.thumbWidth}
+                height={image.thumbHeight}
+                alt="play thumbnail"
+                className={`${(image.blur && "blur") || ""}`}
+              />
+              <div className="absolute inset-0 bg-black/90 text-white opacity-0 transition-opacity group-hover:opacity-90">
+                <div className="flex h-full flex-col items-center justify-center gap-2">
+                  <AiOutlineExpandAlt className="text-3xl" />
+                  <p className="font-bold text-red-600">
+                    {(image.blur && "Warning Nudity") || ""}
+                  </p>
+                </div>
+              </div>
+            </div>
           </button>
         ))}
       </section>
