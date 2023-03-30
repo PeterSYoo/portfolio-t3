@@ -422,6 +422,8 @@ export const AboutSection = ({
                 ))}
             </div>
           </div>
+          {/* Line Break ---------------------------------- */}
+          <div className="border-b border-black/20"></div>
         </div>
       </section>
     </>
