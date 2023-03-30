@@ -19,6 +19,7 @@ export const Header = ({
   const [activeMenu, setActiveMenu] = useState<string>("landing");
   const [skipScrollActiveMenuUpdate, setSkipScrollActiveMenuUpdate] =
     useState<boolean>(false);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false);
   const { isWork, setIsWork } = useContext(IsWorkContext);
 
   // Constants -------------------------------
@@ -64,7 +65,7 @@ export const Header = ({
     <>
       <section
         id="header"
-        className={`fixed top-0 z-30 h-[90px] w-full bg-[#EFEEED] pr-5 ${
+        className={`fixed top-0 z-40 h-[90px] w-full bg-[#EFEEED] pr-5 ${
           (isWork === true &&
             "bg-opacity-0 backdrop-blur transition-all duration-1000") ||
           ""
@@ -96,7 +97,10 @@ export const Header = ({
           </button>
           {/* Menu ----------------- */}
           <div className="flex w-full justify-end md:hidden">
-            <button className="text-3xl">
+            <button
+              onClick={() => setIsHamburgerOpen(!isHamburgerOpen)}
+              className="text-3xl"
+            >
               <RxHamburgerMenu />
             </button>
           </div>
@@ -197,6 +201,44 @@ export const Header = ({
           </div>
         </div>
       </section>
+      <div
+        className={`fixed top-0 left-0 z-30 -mt-[100px] flex w-full transform flex-col items-center justify-center bg-[#EFEEED]/20 pt-48 backdrop-blur-md transition-all duration-500 ease-in-out md:hidden ${
+          isHamburgerOpen ? "h-[400px] translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <ul className="flex w-full flex-col items-end justify-end gap-3 pr-[61px] text-xl">
+          <li
+            onClick={() => handleMenuClick("work")}
+            className="cursor-pointer"
+          >
+            Work
+          </li>
+          <li
+            onClick={() => handleMenuClick("about")}
+            className="cursor-pointer"
+          >
+            About
+          </li>
+          <li
+            onClick={() => handleMenuClick("play")}
+            className="cursor-pointer"
+          >
+            Play
+          </li>
+          <li
+            onClick={() => handleMenuClick("resume")}
+            className="cursor-pointer"
+          >
+            Resume
+          </li>
+          <li
+            onClick={() => handleMenuClick("email")}
+            className="cursor-pointer"
+          >
+            Email
+          </li>
+        </ul>
+      </div>
     </>
   );
 };
