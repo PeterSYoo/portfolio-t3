@@ -324,7 +324,7 @@ export const AboutSection = ({
               to challenge myself on each new app project that I start.
             </p>
             <div className="flex flex-col gap-2">
-              <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700">
+              <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 dark:text-gray-400">
                 Beyond Coding
               </h1>
               <p className="text-xl">
@@ -336,12 +336,12 @@ export const AboutSection = ({
           </div>
         </div>
         {/* Technologies ---------------------- */}
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-14 px-5">
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-14 px-10">
           {/* Line Break ---------------------------------- */}
-          <div className="border-b border-black/20"></div>
+          <div className="border-b border-black/20 dark:border-white/10"></div>
           {/* Languages ----------------------------------- */}
           <div className="mt-10 flex flex-col gap-8">
-            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 dark:text-gray-400 md:-mt-10">
               Languages
             </h1>
             <div className="flex flex-wrap items-center gap-14">
@@ -355,10 +355,10 @@ export const AboutSection = ({
             </div>
           </div>
           {/* Line Break ---------------------------------- */}
-          <div className="border-b border-black/20"></div>
+          <div className="border-b border-black/20 dark:border-white/10"></div>
           {/* Front-End ----------------------------------- */}
           <div className="mt-10 flex flex-col gap-8">
-            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 dark:text-gray-400 md:-mt-10">
               Front-End
             </h1>
             <div className="flex flex-wrap items-center gap-14">
@@ -372,10 +372,10 @@ export const AboutSection = ({
             </div>
           </div>
           {/* Line Break ---------------------------------- */}
-          <div className="border-b border-black/20"></div>
+          <div className="border-b border-black/20 dark:border-white/10"></div>
           {/* Back-End ----------------------------------- */}
           <div className="mt-10 flex flex-col gap-8">
-            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 dark:text-gray-400 md:-mt-10">
               Back-End
             </h1>
             <div className="flex flex-wrap items-center gap-14">
@@ -389,10 +389,10 @@ export const AboutSection = ({
             </div>
           </div>
           {/* Line Break ---------------------------------- */}
-          <div className="border-b border-black/20"></div>
+          <div className="border-b border-black/20 dark:border-white/10"></div>
           {/* Databases ----------------------------------- */}
           <div className="mt-10 flex flex-col gap-8">
-            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 dark:text-gray-400 md:-mt-10">
               Databases
             </h1>
             <div className="flex flex-wrap items-center gap-14">
@@ -406,10 +406,10 @@ export const AboutSection = ({
             </div>
           </div>
           {/* Line Break ---------------------------------- */}
-          <div className="border-b border-black/20"></div>
+          <div className="border-b border-black/20 dark:border-white/10"></div>
           {/* Dev Tools ----------------------------------- */}
           <div className="mt-10 flex flex-col gap-8">
-            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 md:-mt-10">
+            <h1 className="flex w-full justify-start font-serif text-3xl font-bold italic text-gray-700 dark:text-gray-400 md:-mt-10">
               Dev Tools
             </h1>
             <div className="flex flex-wrap items-center gap-14">
@@ -423,7 +423,7 @@ export const AboutSection = ({
             </div>
           </div>
           {/* Line Break ---------------------------------- */}
-          <div className="border-b border-black/20"></div>
+          <div className="border-b border-black/20 dark:border-white/10"></div>
         </div>
       </section>
     </>
