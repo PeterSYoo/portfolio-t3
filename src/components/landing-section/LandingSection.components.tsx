@@ -20,7 +20,7 @@ export const LandingSection = ({
           {/* Name ---------------- */}
           <div className="mt-[200px]">
             <p className="pl-1 text-[20px] font-light">Hi 👋, my name is</p>
-            <h1 className="font-serif text-[64px] font-semibold italic leading-[80px] tracking-wide text-gray-800">
+            <h1 className="font-serif text-[64px] font-semibold italic leading-[80px] tracking-wide text-gray-800 dark:text-gray-100">
               Peter Yoo{" "}
               <span className="font-inter text-2xl font-light not-italic">
                 a
@@ -44,7 +44,7 @@ export const LandingSection = ({
                 href="https://drive.google.com/file/d/1FtQO7NeQUfQWxV0m9Cp7zW6TGIbHq5Y2/view"
                 target="_blank"
               >
-                <button className="rounded border border-black px-1 py-0.5 text-xs">
+                <button className="rounded border border-black/30 px-2 py-0.5 text-xs text-gray-700 hover:text-black dark:border-white/20 dark:text-gray-300 hover:dark:text-white">
                   RESUME
                 </button>
               </a>
@@ -52,7 +52,7 @@ export const LandingSection = ({
           </div>
           {/* Animated Text ---------------- */}
           <div className="">
-            <h1 className="font-serif text-[76px] italic leading-[75px] text-gray-800">
+            <h1 className="font-serif text-[76px] italic leading-[75px] text-gray-800 dark:text-gray-100">
               <TypingText
                 texts={[
                   "I am always curious about learning new technologies.",
