@@ -117,7 +117,7 @@ export const WorkSection = ({
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1679869223/Portfolio/Work/TalkThru/4_exkbah.png",
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1679869222/Portfolio/Work/TalkThru/5_qltxie.png",
       ],
-      youtube: "",
+      youtube: "https://www.youtube.com/embed/3wRq6M4IQog",
     },
     {
       name: "Nudoodle",
@@ -220,7 +220,7 @@ export const WorkSection = ({
       <section
         ref={workRef}
         id="work"
-        className="mx-auto w-full max-w-[1440px] px-8 pt-[170px] pb-[200px]"
+        className="mx-auto w-full max-w-[1440px] px-8 pt-[110px] pb-[200px]"
       >
         <div className="grid w-full grid-cols-1 gap-[40px] lg:grid-cols-2">
           {portfolio.map((work, i: number) => (
