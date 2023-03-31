@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import { useEffect, useRef, useState } from "react";
 import { AboutSection } from "~/components/about-section/AboutSection.components";
-import { FoooterSection } from "~/components/footer-section/FoooterSection.components";
+import { FooterSection } from "~/components/footer-section/FooterSection.components";
 import { Header } from "~/components/Header.components";
 import { LandingSection } from "~/components/landing-section/LandingSection.components";
 import { PlaySection } from "~/components/play-section/PlaySection.components";
@@ -83,7 +83,7 @@ const Home: NextPage = () => {
         {/* Play Section ------------------------------ */}
         <PlaySection playRef={sectionRefs.play} />
         {/* Footer Section ---------------------------- */}
-        <FoooterSection />
+        <FooterSection />
       </main>
     </>
   );
