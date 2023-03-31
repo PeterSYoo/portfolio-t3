@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Themes ---------------------------------------- */
+@layer base {
+  body {
+    @apply bg-[#EFEEED] transition-all duration-500 ease-in-out dark:bg-[#2e2e2e] dark:text-gray-300;
+  }
+}
+
+/* Theme Animation Slider ------------------------ */
+
 /* Text Cursor ----------------------------------- */
 .cursor {
   animation: blink 1s ease-in-out infinite;
