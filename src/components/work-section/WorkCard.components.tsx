@@ -16,7 +16,7 @@ export const WorkCard = ({
           style={{ backgroundImage: `url(${work.thumbnail})` }}
         >
           <div className="flex w-full justify-end pt-4 pr-4">
-            <div className="rounded border border-[#c6c5c4] bg-white/70 px-3 py-2 text-sm font-semibold shadow-gray-400 backdrop-blur-[2px]">
+            <div className="rounded border border-[#c6c5c4] bg-white/70 px-3 py-2 text-sm font-semibold text-gray-600 shadow-gray-400 backdrop-blur-[2px] dark:text-gray-600">
               {work.type}
             </div>
           </div>
