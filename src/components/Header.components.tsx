@@ -130,7 +130,9 @@ export const Header = ({
           </div>
           <div
             className={`${
-              (isWork && "dark:text-gray-700") || ""
+              (isWork &&
+                "transition-all duration-1000 ease-in-out dark:text-gray-700") ||
+              ""
             } hidden w-full items-center justify-end gap-14 rounded-lg font-semibold text-gray-700 dark:text-gray-300 md:flex`}
           >
             {/* Menu Icon Background ------------- */}
