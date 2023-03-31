@@ -6,10 +6,8 @@ import {
   useState,
   useContext,
   useEffect,
-  useRef,
 } from "react";
 import {
-  BsFillMoonStarsFill,
   BsFillSunFill,
   BsMoonStars,
   BsMoonStarsFill,
@@ -37,9 +35,9 @@ export const Header = ({
   // Constants -------------------------------
   const activeMenuClasses = "text-gray-600 transition-all duration-1000";
   const themeAfter =
-    "after:absolute after:h-8 after:w-10 after:rounded-l-md after:rounded-r-none after:bg-white/70 after:transition-all after:content-[''] after:left-[0px]";
+    "after:absolute after:h-8 after:w-11 after:rounded-l-md after:rounded-r-none after:bg-white/30 after:transition-all after:content-[''] after:left-[0px] after:border-r after:border-gray-400";
   const themePeerCheckedAfter =
-    "peer-checked:after:translate-x-[47px] peer-checked:after:rounded-r-md peer-checked:after:rounded-l-none";
+    "peer-checked:after:translate-x-[45px] peer-checked:after:rounded-r-md peer-checked:after:rounded-l-none peer-checked:after:border-l peer-checked:after:border-gray-400";
 
   // Custom Functions --------------------------------
   const scrollToSection = (sectionId: string) => {
