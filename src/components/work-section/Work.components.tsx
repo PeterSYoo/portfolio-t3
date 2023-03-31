@@ -50,7 +50,7 @@ export const Work = ({ work }: { work: IWork | null }) => {
         }
         z-40 h-screen w-screen overflow-y-scroll pt-[90px] pb-[200px]`}
       >
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center px-10">
+        <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center justify-center px-10 text-gray-700 dark:text-gray-700">
           {/* Close Component ------------------------- */}
           <button
             onClick={() => setIsWork(false)}
