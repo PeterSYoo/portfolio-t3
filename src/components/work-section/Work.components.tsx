@@ -61,7 +61,7 @@ export const Work = ({ work }: { work: IWork | null }) => {
           <div className="flex w-full flex-col gap-1">
             {/* Name & Date --------------------------- */}
             <div className="flex w-full items-end justify-between pt-10">
-              <h1 className="font-serif text-3xl font-bold md:text-5xl">
+              <h1 className="font-serif text-3xl font-bold italic md:text-5xl">
                 {work?.name}
               </h1>
               <div className="flex flex-col items-end text-sm md:text-lg">

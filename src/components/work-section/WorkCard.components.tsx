@@ -23,7 +23,7 @@ export const WorkCard = ({
         </div>
         <div className="flex flex-col gap-2 px-1">
           <div className="flex items-center justify-between">
-            <h1 className="font-serif text-lg font-semibold md:text-3xl lg:text-2xl">
+            <h1 className="font-serif text-lg font-semibold italic md:text-3xl lg:text-2xl">
               {work.name}
             </h1>
             <p className="text-sm text-gray-500 md:text-lg lg:text-base">

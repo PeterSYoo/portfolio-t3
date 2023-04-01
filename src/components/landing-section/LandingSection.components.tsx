@@ -21,7 +21,7 @@ export const LandingSection = ({
           <div className="mt-[200px]">
             <p className="pl-1 text-[20px] font-light">Hi 👋, my name is</p>
             <h1 className="font-serif text-[64px] font-semibold italic leading-[80px] tracking-wide text-gray-800 dark:text-gray-100">
-              Peter Yoo{" "}
+              Peter Yoo&nbsp;
               <span className="font-inter text-2xl font-light not-italic">
                 a
               </span>
