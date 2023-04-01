@@ -35,7 +35,7 @@ export const Header = ({
   // Constants -------------------------------
   const activeMenuClasses = "text-gray-600 transition-all duration-1000";
   const themeAfter =
-    "after:absolute after:h-8 after:w-11 after:rounded-l-md after:rounded-r-none after:bg-white/30 after:transition-all after:content-[''] after:left-[0px] after:border-r after:border-gray-400";
+    "after:absolute after:h-8 after:w-11 after:rounded-l-md after:rounded-r-none after:bg-white/30 after:transition-all after:content-[''] after:left-[0px] after:border-r after:border-gray-400 after:duration-500 after:ease-in-out";
   const themePeerCheckedAfter =
     "peer-checked:after:translate-x-[45px] peer-checked:after:rounded-r-md peer-checked:after:rounded-l-none peer-checked:after:border-l peer-checked:after:border-gray-400";
 
