@@ -54,10 +54,7 @@ export const LandingSection = ({
           <div className="">
             <h1 className="font-serif text-[76px] italic leading-[75px] text-gray-800 dark:text-gray-100">
               <TypingText
-                texts={[
-                  "I am always curious about learning new technologies.",
-                  "Teamwork makes the web work.",
-                ]}
+                texts={["I am always curious about learning new technologies."]}
               />
             </h1>
           </div>
