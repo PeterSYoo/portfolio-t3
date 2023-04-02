@@ -35,13 +35,15 @@ export const ImageModal = ({
   // Effects -----------------------------------------
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") {
-        setIsImageLoading(true);
-        handlePrevClick();
-      } else if (event.key === "ArrowRight") {
-        setIsImageLoading(true);
-        handleNextClick();
-      } else if (event.key === "Escape") {
+      // if (event.key === "ArrowLeft") {
+      //   setIsImageLoading(true);
+      //   handlePrevClick();
+      // } else if (event.key === "ArrowRight") {
+      //   setIsImageLoading(true);
+      //   handleNextClick();
+      // }
+
+      if (event.key === "Escape") {
         setIsImage(false);
       }
     };
@@ -75,7 +77,7 @@ export const ImageModal = ({
               <p className="text-white">
                 {imageIndex + 1} / {imagesTotal}
               </p>
-              <div className="flex items-center gap-5">
+              {/* <div className="flex items-center gap-5">
                 <button onClick={handlePrevClick}>
                   <FiChevronLeft className="text-2xl text-white" />
                 </button>
@@ -83,7 +85,7 @@ export const ImageModal = ({
                 <button onClick={handleNextClick}>
                   <FiChevronRight className="text-2xl text-white" />
                 </button>
-              </div>
+              </div> */}
               <button onClick={() => setIsImage(false)}>
                 <RiCloseFill className="text-3xl text-white" />
               </button>

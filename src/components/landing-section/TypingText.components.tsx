@@ -6,7 +6,7 @@ export const TypingText = ({ texts }: { texts: string[] }) => {
   const [displayText, setDisplayText] = useState<string | undefined>("");
   const [isTyping, setIsTyping] = useState<boolean>(false);
 
-  // UseEffects --------------------------------------
+  // Effects --------------------------------------
   useEffect(() => {
     let currentIndex = 0;
     const interval = setInterval(() => {
