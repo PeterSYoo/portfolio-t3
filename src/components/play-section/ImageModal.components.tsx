@@ -109,7 +109,9 @@ export const ImageModal = ({
                   absolute inset-0 bg-white/10 transition-opacity`}
                 >
                   {isImageLoading ? (
-                    <div className="spin-fast flex h-6 w-6 items-center justify-center rounded-full border-2 border-solid border-[#766f6a] border-current border-r-transparent text-[#766f6a]"></div>
+                    <div className="flex h-full items-center justify-center">
+                      <div className="spin-fast h-6 w-6 rounded-full border-2 border-solid border-[#766f6a] border-current border-r-transparent text-[#766f6a]"></div>
+                    </div>
                   ) : (
                     <div className="flex h-full flex-col items-center justify-center gap-2">
                       {(!isClicked && (

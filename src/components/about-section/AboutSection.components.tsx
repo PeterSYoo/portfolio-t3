@@ -328,9 +328,8 @@ export const AboutSection = ({
                 Beyond Coding
               </h1>
               <p className="text-xl">
-                I have a passion for traditional figurative art and I love to
-                spend my free time going to live figure drawing sessions and
-                doing oil paintings.
+                I love to spend my free time going to live figure drawing
+                sessions and doing oil paintings.
               </p>
             </div>
           </div>
