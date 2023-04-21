@@ -21,7 +21,7 @@ export const WorkSection = ({
       thumbnail:
         "https://res.cloudinary.com/dryh1nvhk/image/upload/v1679728345/Portfolio/Work/prepmeal_yu8ijj.png",
       technologiesThumb:
-        "NextJS · TypeScript · Tailwind CSS · tRPC · PostgreSQL",
+        "NextJS · TypeScript · Tailwind CSS · tRPC · PostgreSQL · Supabase",
       link: "https://prepmealai.vercel.app",
       github: "https://github.com/PeterSYoo/prepmealai-t3",
       technologies: [
@@ -31,6 +31,7 @@ export const WorkSection = ({
         "tRPC",
         "Prisma",
         "PostgreSQL",
+        "Supabase",
         "OpenAI",
       ],
       description:
